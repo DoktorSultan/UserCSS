@@ -7,21 +7,25 @@
 @license     CC-BY-SA-4.0
 @author      gomgon
 @advanced color bg "Background" #1E1E1E
+@advanced color idx "Indextracks" #202020
+@advanced color idxh "IndextracksHeading" #242424
 @advanced color elements "Elements" #282828
 @advanced color elements-lighter "Lighter elements & headers" #323232
 @advanced color border-color "Borders color" #323232
 @advanced color secondary-button "Buttons" #404040
 @advanced color secondary-button-H "Buttons hover" #505050
 @advanced color main-text "Main text" #999999
+@advanced color text-2 "Text less1" #666666
 @advanced color button-text "Buttons text" #FFFFFF
-@advanced color color-global "Main Color" #5C809E
-@advanced color color-global-H "Main color hover" #77A6CC
-@advanced color link-visited "Visited link" #805C9E
-@advanced color link-visited-H "Visited link hover" #A677CC
+@advanced color color-global "Main Color" #4C88a8
+@advanced color color-global-H "Main color hover" #6Ca8c8
+@advanced color link-visited "Visited link" #8C68a8
+@advanced color link-visited-H "Visited link hover" #ac88c8
+@advanced color collection "Collection color" #1a2b2f
+@advanced color wantlist "Wantlist color" #2b1a1f
 ==/UserStyle== */
 @-moz-document domain("discogs.com"){
-.section.report .section_content hr,
-#main_wrapper #page.aside_right #page_aside .section:not(#statistics):not(#video):nth-of-type(6){
+.section.report .section_content hr{
 display:none;
 }
 body,
@@ -31,12 +35,54 @@ a.readmore_toggler,
 .history tr.even, .history tr:nth-child(2n),
 .history table tr.datarow:hover,
 .is_mobile.needs_reduced_ui #page.aside_off_canvas #page_content,
-table.subform_tracklist .subform_track,
-table.subform_tracklist .subform_track.track_index,
-table.subform_tracklist .subform_track.track_subtrack,
-table.subform_tracklist .subform_track.subform_subtrack{
+table.subform_tracklist .subform_track{
 background:/*[[bg]]*/;
 }
+table.subform_tracklist .subform_track.track_index {
+background:/*[[idx]]*/;
+}
+table.subform_tracklist .subform_track.track_subtrack, table.subform_tracklist .subform_track.subform_subtrack {
+background:/*[[idx]]*/;
+}
+button.id_3y8W3 span {color: /*[[main-text]]*/;}
+tr.index_3D8To {background:/*[[idxh]]*/; font-weight: normal;}
+tr.index_3D8To td {padding-left: 2px;}
+tr.subtrack_1Itjg {background:/*[[idx]]*/; font-size: smaller;}
+tr.subtrack_1Itjg td.trackTitle_CTKp4 {padding-left: 6px;}
+tr.heading_24HyI {background:/*[[idxh]]*/;}
+table.tracklist_3QGRS {border-collapse: separate; border: 2px solid /*[[idx]]*/; border-spacing: 0px;}
+td.trackTitle_CTKp4 {width: auto; padding-left: 2px;}
+td.artist_3zAQD {width: auto;}
+span.dash_1EAjh {color: /*[[idxh]]*/;}
+
+a.link_1ctor {color: /*[[color-global]]*/;}
+a.link_1ctor:hover {color: /*[[color-global-H]]*/;}
+div.body__xbaR a:visited {color: /*[[link-visited]]*/;}
+div.body__xbaR a:visited:hover {color: /*[[link-visited-H]]*/;}
+    
+span.entity_1XpR8 {color: /*[[text-2]]*/;}
+span.role_2ga14 {color: /*[[text-2]]*/;}
+    
+button.button_3lXdg, .grey_1js2e, .disabled_1jdDa, .submit_2yYrR, .small_fzGKo, .button_3lhp0 {background-color: /*[[bg]]*/; background-image: none; color: /*[[text-2]]*/; border-color: /*[[border-color]]*/;}
+    
+div.collection_3SHpt {background: /*[[collection]]*/; border-color: /*[[border-color]]*/;}
+button.remove_1a0fv {background: none;}
+div.value_33OPW {color: /*[[text-2]]*/;}
+div.wantlist_3AV5h {background: /*[[wantlist]]*/; border-color: /*[[border-color]]*/;}
+div.box_384HK header {border-color: /*[[border-color]]*/;}
+div.ratings_1pAt8, .wrapper_3ECKE {border-color: /*[[border-color]]*/;}
+    
+a.grey_1js2e, a.blue_2acgV {background-color: /*[[bg]]*/; background-image: none; color: /*[[text-2]]*/; border-color: /*[[border-color]]*/;}
+a.more_2U6G9 {border-color: /*[[border-color]]*/;}
+div.report_3dOkc {border-color: /*[[border-color]]*/;}
+    
+header.header_W2hzl {border-bottom: 1px solid /*[[idxh]]*/;}
+    
+table.versions_1t0s2 tr {border-color: /*[[border-color]]*/;}
+    
+div.wrapper_MVvNX::before, .wrapper_MVvNX::after {background: none;}
+
+    
 .layout,
 .footer{
 background-color:/*[[bg]]*/;
@@ -292,8 +338,7 @@ table.subform_table td,
 .footer,
 .format_descriptions,
 #editing_header .editing_header_help li:first-child,
-.history_form .actions,
-.discloser__button{
+.history_form .actions{
 border-color:/*[[border-color]]*/;
 }
 #main_wrapper div#page.aside_right div#page_content div{
@@ -401,8 +446,7 @@ a.readmore_toggler.touch, a.readmore_toggler:hover,
 .share a:hover,
 .search::before,
 .ct-label,
-.smallish,
-button.discloser__button{
+.smallish{
 color:/*[[main-text]]*/;
 }
 .ui-autocomplete a .sublabel,
@@ -495,6 +539,9 @@ margin: 0px;
 }
 #releases{
 margin:0 0 12px 232px;
+}
+#page_aside div.section:nth-child(4){
+margin-bottom:0px;
 }
 ul.module_blocks > li,
 div.section{
@@ -665,6 +712,12 @@ background-color:/*[[elements]]*/;
 }
 .is_mobile.needs_reduced_ui #discography_wrapper.aside_nav_wrap #releases #pjax_container{
 padding-top:8px;
+}
+table.subform_tracklist .subform_track.track_index {
+    background: #303030;
+}
+table.subform_tracklist .subform_track.track_subtrack, table.subform_tracklist .subform_track.subform_subtrack {
+    background: #303030;
 }
 }
 }
